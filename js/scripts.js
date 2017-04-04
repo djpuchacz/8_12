@@ -107,14 +107,19 @@ function checkRoundWinner(playerPick, computerPick) {
         computer.score++;
     }
 	setGamePoints();
-	endGame();
 	
-	function endGame(){
-		if (player.score == 10 || computer.score == 10) {
-			gameState='ended';
-			alert();
-			setGameElements();
-		}
+	if (player.score == 10 || computer.score == 10) {
+		gameState='ended';
+		setGameElements();
+		showWinnerInfo();
+	}
+
+}
+function showWinnerInfo(){
+	if(player.score == 10) {
+		alert('Wygrałeś');
+	} else {
+		alert('Wygrał komputer');
 	}
 }
 
